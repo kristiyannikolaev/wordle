@@ -1,5 +1,3 @@
 <div class="keyboard-container">
-    <span *ngFor="let key of keyboard">
-        <button>{{ key }}</button>
-    </span>
+    <button *ngFor="let key of keyboard" (click)="handleClick(key)" id="{{ key }}" >{{ key }}</button>
 </div>

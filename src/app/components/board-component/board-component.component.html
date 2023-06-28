@@ -1,3 +1,5 @@
 <div class="board-container">
-    <p>board-component works!</p>
+    <div *ngFor="let row of board; let i = index" id="guessRow-{{i}}">
+        <div *ngFor="let tile of row; let k = index" id="guessRow-{{i}}-tile-{{k}}" class="tile"></div>
+    </div>
 </div>

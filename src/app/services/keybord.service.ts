@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { BoardService } from './board.service';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 export class KeyboardService {
+
+  wordle = 'ПРИБОР';
+
+  constructor(private boardService: BoardService) {}
 
   keys: string[] = [
     'Я',
@@ -36,6 +41,11 @@ export class KeyboardService {
     'Н',
     'М',
     'Ч',
-    '\u0008'
+    '\u232b'
   ];
+
+  handleClick(key: string,): void {
+    console.log('cliked ' + key)
+    this.boardService.addLetter(key);
+  }
 }
